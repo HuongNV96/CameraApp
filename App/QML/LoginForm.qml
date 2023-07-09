@@ -10,14 +10,16 @@ Rectangle {
     color: '#F9F9F9'
     anchors.centerIn: parent
 
-    property QtObject loginPresenter : LoginPresenter {}
+    property var loginPresenter : null
 
     onWidthChanged: {
         loginForm.scaleFactorX = width / 657;
     }
+
     onHeightChanged: {
         loginForm.scaleFactorY = height / 394;
     }
+
     Rectangle {
         id : loginForm
         width: 320 * scaleFactorX

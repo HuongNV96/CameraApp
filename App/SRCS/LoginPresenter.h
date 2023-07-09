@@ -8,8 +8,10 @@ class LoginPresenter : public QObject
 {
     Q_OBJECT
 public:
-    LoginPresenter() = default;
-    Q_INVOKABLE bool login(QString user, QString password);
+    explicit LoginPresenter(QObject *parent = nullptr);
+    Q_INVOKABLE void login(QString user, QString password);
+    Q_SIGNAL void loginedStatus(bool status);
+    Q_SIGNAL void loggingStatus(bool status);
 };
 
 #endif // LOGINPRESENTER_H

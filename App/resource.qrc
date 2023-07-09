@@ -2,5 +2,6 @@
     <qresource prefix="/App">
         <file>QML/LoginForm.qml</file>
         <file>QML/Main.qml</file>
+        <file>QML/CameraView.qml</file>
     </qresource>
 </RCC>
