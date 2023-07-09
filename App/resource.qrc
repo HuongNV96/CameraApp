@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/App">
+        <file>QML/LoginForm.qml</file>
+        <file>QML/Main.qml</file>
+    </qresource>
+</RCC>

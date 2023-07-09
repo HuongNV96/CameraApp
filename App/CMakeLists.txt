@@ -3,19 +3,23 @@ cmake_minimum_required(VERSION 3.16)
 project(CameraApp VERSION 0.1 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_AUTORCC ON)
+set(CMAKE_AUTOMOC ON)
 
 find_package(Qt6 6.4 REQUIRED COMPONENTS Quick)
 
 qt_standard_project_setup()
 
-qt_add_executable(CameraApp
-    main.cpp
+file(GLOB APP_SRCS
+     "SRCS/*.c"
+     "SRCS/*.cpp"
+     "SRCS/*.h"
+     "SRCS/*.hpp"
 )
 
-qt_add_qml_module(CameraApp
-    URI App
-    VERSION 1.0
-    QML_FILES QML/Main.qml QML/LoginForm.qml
+qt_add_executable(CameraApp
+    resource.qrc
+    ${APP_SRCS}
 )
 
 set_target_properties(CameraApp PROPERTIES
@@ -27,7 +31,7 @@ set_target_properties(CameraApp PROPERTIES
 )
 
 target_link_libraries(CameraApp
-    PRIVATE Qt6::Quick EngineCamera
+    PRIVATE Qt6::Quick EngineCamera ExtraModule
 )
 
 install(TARGETS CameraApp

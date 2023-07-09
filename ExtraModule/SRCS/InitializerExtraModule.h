@@ -1,0 +1,7 @@
+#ifndef INITIALIZEREXTRAMODULE_H
+#define INITIALIZEREXTRAMODULE_H
+
+
+void initializerExtraModule();
+
+#endif // INITIALIZEREXTRAMODULE_H

@@ -1,23 +1,22 @@
 import QtQuick
-import QtQuick.Window
 import QtQuick.Controls
 import QtQuick.Layouts
+import App 1.0
 
-Rect {
-    id : loginWindow
+Rectangle {
     width: 657
     height: 394
     visible: true
-    title: qsTr("Camera App")
     color: '#F9F9F9'
+    anchors.centerIn: parent
+
+    property QtObject loginPresenter : LoginPresenter {}
 
     onWidthChanged: {
         loginForm.scaleFactorX = width / 657;
-        widthOld = width
     }
     onHeightChanged: {
         loginForm.scaleFactorY = height / 394;
-        heightOld = height
     }
     Rectangle {
         id : loginForm
@@ -104,6 +103,9 @@ Rect {
                     font.family: "Helvetica"
                     background: Rectangle {
                             color: '#007AFF'
+                    }
+                    onClicked: {
+                        loginPresenter.login("1111", "1111")
                     }
                 }
                 ColumnLayout {
