@@ -31,7 +31,7 @@ set_target_properties(CameraApp PROPERTIES
 )
 
 target_link_libraries(CameraApp
-    PRIVATE Qt6::Quick EngineCamera ExtraModule
+    PRIVATE Qt6::Quick EngineCamera ExtraModule TemplatesModule
 )
 
 install(TARGETS CameraApp

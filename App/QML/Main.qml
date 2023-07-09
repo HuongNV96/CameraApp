@@ -16,7 +16,7 @@ Window {
 
     property QtObject loginPresenter: LoginPresenter {
         onLoginedStatus : (status) => {
-            if (status) {
+            if (!status) {
                 let component = Qt.createComponent("qrc:/App/QML/LoginForm.qml")
                 if (component.status !== Component.Ready) {
                     console.log("Error create LoginForm.qml")
@@ -70,5 +70,6 @@ Window {
         height: 60
         anchors.centerIn: parent
         running: false
+        z : 1
     }
 }
