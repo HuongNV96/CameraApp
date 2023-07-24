@@ -10,7 +10,10 @@ Rectangle {
     color: '#F9F9F9'
     anchors.centerIn: parent
 
+    id : loginView
     property var loginPresenter : null
+    property var user : null
+    property var pw : null
 
     onWidthChanged: {
         loginForm.scaleFactorX = width / 657;
@@ -63,6 +66,9 @@ Rectangle {
                         placeholderTextColor  : '#EEEEEE'
                         verticalAlignment: Qt.AlignVCenter
                         horizontalAlignment: Qt.AlignLeftr
+                        onTextChanged: {
+                            loginView.user = text
+                        }
                     }
                 }
                 Column {
@@ -93,6 +99,9 @@ Rectangle {
                        echoMode: TextInput.Password
                        verticalAlignment: Qt.AlignVCenter
                        horizontalAlignment: Qt.AlignLeftr
+                       onTextChanged: {
+                           loginView.pw = text
+                       }
                    }
                 }
 
@@ -107,7 +116,8 @@ Rectangle {
                             color: '#007AFF'
                     }
                     onClicked: {
-                        loginPresenter.login("1111", "1111")
+                        console.log(loginView.user + "   " + loginView.pw)
+                        loginPresenter.login(loginView.user , loginView.pw)
                     }
                 }
                 ColumnLayout {
@@ -126,6 +136,11 @@ Rectangle {
                         font.family: "Helvetica"
                         Layout.alignment: Qt.AlignCenter
                     }
+                }
+                Text {
+                    id: notifyLogin
+                    color: 'red'
+                    anchors.horizontalCenter: parent.horizontalCenter
                 }
             }
         }

@@ -3,5 +3,9 @@
         <file>QML/LoginForm.qml</file>
         <file>QML/Main.qml</file>
         <file>QML/CameraView.qml</file>
+        <file>QML/1x1View.qml</file>
+        <file>QML/2x2View.qml</file>
+        <file>QML/4x4View.qml</file>
+        <file>QML/CameraPlayer.qml</file>
     </qresource>
 </RCC>

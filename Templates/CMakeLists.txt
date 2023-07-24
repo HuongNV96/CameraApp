@@ -21,8 +21,8 @@ qt_add_library(TemplatesModule STATIC
     ${TEMPLATES_MODULE_SRCS}
 )
 
-target_include_directories(ExtraModule PUBLIC SRCS)
+target_include_directories(TemplatesModule PUBLIC SRCS)
 
-target_link_libraries(ExtraModule
+target_link_libraries(TemplatesModule
     PRIVATE Qt6::Quick
 )

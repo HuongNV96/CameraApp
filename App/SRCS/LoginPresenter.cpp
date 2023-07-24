@@ -12,6 +12,7 @@ LoginPresenter::LoginPresenter(QObject *parent)
     connect(&manager, &LoginManger::loginedStatus, this, &LoginPresenter::loginedStatus);
     connect(&manager, &LoginManger::loggingStatus, this, &LoginPresenter::loggingStatus);
 
+    //fake int password
     _login("111", "1111");
 }
 

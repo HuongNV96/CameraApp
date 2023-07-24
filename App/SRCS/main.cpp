@@ -1,9 +1,9 @@
 
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
-#include <DetectCar.hpp>
 #include "LoginPresenter.h"
 #include "InitializerExtraModule.h"
+#include "InitializerEngine.hpp"
 
 int main(int argc, char *argv[])
 {
@@ -13,7 +13,9 @@ int main(int argc, char *argv[])
     qmlRegisterType<LoginPresenter>("App", 1, 0, "LoginPresenter");
     qmlRegisterType(QUrl("qrc:/App/QML/CameraView.qml"), "App", 1, 0, "CameraView");
     qmlRegisterType(QUrl("qrc:/App/QML/LoginForm.qml"), "App", 1, 0, "LoginForm");
+    qmlRegisterType(QUrl("qrc:/App/QML/CameraPlayer.qml"), "App", 1, 0, "CameraPlayer");
     initializerExtraModule();
+    initializerEngine();
 
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreationFailed,
         &app, []() { QCoreApplication::exit(-1); },

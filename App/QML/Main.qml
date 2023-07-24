@@ -22,11 +22,11 @@ Window {
                     console.log("Error create LoginForm.qml")
                     return;
                 } else {
-                    if (loginView == null) {
+                    if (loginView === null) {
                         loginView = component.createObject(mainWindow, { width : mainWindow.width,
                                                                height : mainWindow.height,
                                                                loginPresenter : mainWindow.loginPresenter});
-                        if (loginView == null) {
+                        if (loginView === null) {
                             console.log("Error create loginForm object")
                         }
                     }

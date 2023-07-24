@@ -17,7 +17,7 @@ file(GLOB EXTRA_MODULE_SRCS
      "SRCS/*.hpp"
 )
 
-qt_add_library(ExtraModule MODULE
+qt_add_library(ExtraModule STATIC
     resource.qrc
     ${EXTRA_MODULE_SRCS}
 )
