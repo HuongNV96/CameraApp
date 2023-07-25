@@ -48,19 +48,53 @@ Rectangle {
                 width: 0.1 * parent.width
                 height: parent.height
 
-                Text {
-                    text: "View Mode"
-                    width:  parent.width
-                }
-
-                ComboBox {
-                    width: parent.width
-                    model: [ "1x1", "1x2", "1x4" ]
-                    onCurrentIndexChanged: {
-                        optionView = currentIndex + 1
-                        console.log(optionView)
-                        switchViews(optionView)
+                MenuBar {
+                    Menu {
+                        title: qsTr("VideoMode")
+                        Action {
+                            text: qsTr("1x1")
+                            onTriggered: {
+                                optionView = 1
+                                switchViews(optionView)
+                            }
+                        }
+                        Action {
+                            text: qsTr("2x1")
+                            onTriggered: {
+                                optionView = 2
+                                switchViews(optionView)
+                            }
+                        }
+                        Action {
+                            text: qsTr("4x1")
+                            onTriggered: {
+                                optionView = 3
+                                switchViews(optionView)
+                            }
+                        }
                     }
+
+                    Menu {
+                        title: qsTr("Camera")
+                        Action {
+                            text: qsTr("Add")
+                            onTriggered: {
+                            }
+                        }
+
+                        Action {
+                            text: qsTr("Remove")
+                            onTriggered: {
+                            }
+                        }
+
+                        Action {
+                            text: qsTr("Update")
+                            onTriggered: {
+                            }
+                        }
+                    }
+
                 }
             }
         }
