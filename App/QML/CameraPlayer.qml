@@ -1,22 +1,18 @@
 import QtQuick
 import QtMultimedia
-
+import App 1.0
 Item {
     anchors.fill: parent
-    MediaPlayer {
-        id: mediaplayer
-        source: "http://streams.videolan.org/samples/360VR/180.mp4"
-        audioOutput: AudioOutput {}
-        videoOutput: videoOutput
-    }
+    property QtObject cameraPlayerPresenter: CameraPlayerPresenter {}
 
     VideoOutput {
         id: videoOutput
         anchors.fill: parent
         fillMode : VideoOutput.Stretch
-    }
-
-    Component.onCompleted: {
-        onPressed: mediaplayer.play();
+        Component.onCompleted:  {
+            cameraPlayerPresenter.setVideoSink(videoSink)
+            //cameraPlayerPresenter.init("http://streams.videolan.org/samples/360VR/180.mp4")
+            cameraPlayerPresenter.init("./test.mp4")
+        }
     }
 }

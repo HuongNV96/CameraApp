@@ -25,7 +25,7 @@ file(GLOB ENGINE_SRCS
 
 qt_add_library(EngineCamera STATIC ${ENGINE_SRCS})
 
-target_link_libraries(EngineCamera PRIVATE
+target_link_libraries(EngineCamera PUBLIC
     TemplatesModule
     Qt6::Quick
     opencv_world3416 opencv_world3416d

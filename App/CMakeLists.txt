@@ -7,6 +7,7 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOMOC ON)
 
 find_package(Qt6 6.4 REQUIRED COMPONENTS Quick)
+find_package(Qt6 REQUIRED COMPONENTS Multimedia)
 
 qt_standard_project_setup()
 
@@ -31,7 +32,7 @@ set_target_properties(CameraApp PROPERTIES
 )
 
 target_link_libraries(CameraApp
-    PRIVATE Qt6::Quick EngineCamera ExtraModule TemplatesModule
+    PRIVATE Qt6::Quick Qt6::Multimedia EngineCamera ExtraModule TemplatesModule
 )
 
 install(TARGETS CameraApp
